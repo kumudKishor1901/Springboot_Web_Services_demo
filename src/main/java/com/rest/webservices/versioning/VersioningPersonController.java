@@ -37,4 +37,14 @@ public class VersioningPersonController {
 	public PersonV2 nameSecondVersionRequestHeader() {
 		return new PersonV2("Kumud","Kishor");
 	}
+	
+	@GetMapping(path="/person", produces="application/vnd.company.app-v1+json" )
+	public PersonV1 nameFirstVersionAcceptHeader() {
+		return new PersonV1("Kumud Kishor");
+	}
+	
+	@GetMapping(path="/person", produces="application/vnd.company.app-v2+json" )
+	public PersonV2 nameSecondVersionAcceptHeader() {
+		return new PersonV2("Kumud","Kishor");
+	}
 }
