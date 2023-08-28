@@ -35,18 +35,13 @@ public class UserDaoServices {
 		
 	}
 	public User findOne(Integer id) {
-		int count = 0;
+		
 		for(int i = 0 ; i < users.size();i++) {
 			if(users.get(i).getId()== id) {
-				count = i;
-				break;
+				return users.get(i);
 			}
 		}
-		if(count==0) {
-			return null;
-		}else {
-			return users.get(count);
-		}
+		return null;
 	}
 	
 	public void deleteById(Integer id) {
